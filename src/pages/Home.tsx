@@ -75,25 +75,35 @@ const Home: React.FC = () => {
                         </p>
                     </div>
 
-                    <div className="hero-stagger hero-visual">
-                        <div className="glass-panel mockup-panel">
-                            <div className="mockup-header">
-                                <div className="dots"><span></span><span></span><span></span></div>
-                                <div className="mockup-title">efficiency_agent.js</div>
+                    <div className="hero-stagger hero-visual" style={{ position: 'relative' }}>
+                        <div className="image-wrapper glass-panel" style={{ padding: '8px', borderRadius: '16px', position: 'relative', overflow: 'hidden' }}>
+                            <img
+                                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                                alt="Team collaborating on automation"
+                                style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '12px', maxHeight: '420px', transition: 'transform 0.7s ease' }}
+                                onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.03)'}
+                                onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                            />
+                            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.6), transparent)', opacity: 0.6, borderRadius: '12px', pointerEvents: 'none' }}></div>
+                        </div>
+
+                        {/* Floating elements to add UI flair */}
+                        <div className="glass-panel" style={{ position: 'absolute', bottom: '-24px', left: '-24px', display: 'flex', alignItems: 'center', gap: '16px', padding: '16px', borderRadius: '12px', boxShadow: '0 20px 40px rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.1)', zIndex: 10, transition: 'transform 0.3s' }} onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-8px)'} onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                            <div style={{ background: 'rgba(102, 51, 238, 0.2)', padding: '12px', borderRadius: '50%', color: 'var(--color-primary)' }}>
+                                <Zap size={24} />
                             </div>
-                            <div className="mockup-body">
-                                <div className="mockup-line"><span className="code-keyword">import</span> {'{'} Team {'}'} <span className="code-keyword">from</span> <span className="code-string">'@business/workforce'</span>;</div>
-                                <div className="mockup-line"><span className="code-keyword">import</span> {'{'} AutomationSystem {'}'} <span className="code-keyword">from</span> <span className="code-string">'@bail/core'</span>;</div>
-                                <div className="mockup-line"><br /></div>
-                                <div className="mockup-line"><span className="code-comment">// Deploying 24/7 autonomous capability</span></div>
-                                <div className="mockup-line"><span className="code-keyword">const</span> operations = <span className="code-keyword">new</span> AutomationSystem();</div>
-                                <div className="mockup-line">operations.optimize(Team.workflows);</div>
-                                <div className="mockup-line"><br /></div>
-                                <div className="mockup-line"><span className="code-function">monitor</span>().then(status ={'>'} {'{'}</div>
-                                <div className="mockup-line indented">console.<span className="code-function">log</span>(<span className="code-string">'Overhead reduced by 40%'</span>);</div>
-                                <div className="mockup-line indented">console.<span className="code-function">log</span>(<span className="code-string">'Capacity increased by 300%'</span>);</div>
-                                <div className="mockup-line">{'}'});</div>
+                            <div>
+                                <p style={{ fontSize: '14px', fontWeight: 'bold', color: 'white', margin: 0 }}>Efficiency +300%</p>
+                                <p style={{ fontSize: '12px', color: 'var(--color-text-muted)', margin: 0, marginTop: '4px' }}>Team capacity unlocked</p>
                             </div>
+                        </div>
+
+                        <div className="glass-panel" style={{ position: 'absolute', top: '-24px', right: '-24px', display: 'flex', flexDirection: 'column', gap: '8px', padding: '16px', borderRadius: '12px', boxShadow: '0 20px 40px rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.1)', zIndex: 10, transition: 'transform 0.3s' }} onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-8px)'} onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#4ade80', animation: 'pulse 2s infinite' }}></div>
+                                <p style={{ fontSize: '12px', fontWeight: '500', color: 'var(--color-text-muted)', margin: 0 }}>System Active</p>
+                            </div>
+                            <p style={{ fontSize: '14px', fontWeight: 'bold', color: 'white', margin: 0 }}>ROI Tracking</p>
                         </div>
                     </div>
                 </div>
@@ -146,11 +156,23 @@ const Home: React.FC = () => {
                                 <li><CheckCircle2 className="text-primary" /> Track performance without touching a spreadsheet</li>
                             </ul>
                         </div>
-                        <div className="what-if-emphasis glass-panel">
-                            <h3>That's not a future promise. That's what we install.</h3>
-                            <p>
-                                We're not here to sell you tools or teach you prompts. We design complete systems, integrate them into your existing workflow, and train your team to use them with confidence.
-                            </p>
+                        <div className="what-if-emphasis glass-panel" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column', height: '100%' }}>
+                            <div style={{ position: 'relative', height: '240px', overflow: 'hidden' }}>
+                                <img
+                                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
+                                    alt="Active team strategy meeting"
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.7s ease' }}
+                                    onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+                                    onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                                />
+                                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, var(--color-surface-bg), transparent)' }}></div>
+                            </div>
+                            <div style={{ padding: '32px', paddingTop: '16px', flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
+                                <h3 style={{ fontSize: '24px', marginBottom: '16px', color: 'white', fontWeight: '600' }}>That's not a future promise. That's what we install.</h3>
+                                <p style={{ fontSize: '18px', color: 'var(--color-text-muted)', margin: 0 }}>
+                                    We're not here to sell you tools or teach you prompts. We design complete systems, integrate them into your existing workflow, and train your team to use them with confidence.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
