@@ -10,8 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Home: React.FC = () => {
     const heroRef = useRef<HTMLDivElement>(null);
     const whatIfRef = useRef<HTMLDivElement>(null);
-    const servicesRef = useRef<HTMLDivElement>(null);
-    const howItWorksRef = useRef<HTMLDivElement>(null);
+    const servicesRef = useRef<HTMLElement>(null);
 
     // Hero Animation
     useEffect(() => {
