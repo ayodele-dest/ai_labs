@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Brand Colors - Electric Indigo */
+  --color-primary: hsl(245, 80%, 65%);
+  --color-primary-light: hsl(245, 80%, 80%);
+  --color-primary-dark: hsl(245, 80%, 50%);
+
+  /* Accent Colors - Vibrant Violet */
+  --color-accent: hsl(275, 80%, 65%);
+  --color-accent-light: hsl(275, 80%, 80%);
+
+  /* Surfacing (Dark Theme Default) */
+  --color-surface-bg: hsl(220, 30%, 4%);
+  --color-surface: hsl(220, 30%, 8%);
+  --color-surface-raised: hsl(220, 30%, 12%);
+  --color-surface-elevated: hsl(220, 30%, 18%);
+
+  /* Text */
+  --color-text: hsl(0, 0%, 98%);
+  --color-text-muted: hsl(220, 20%, 70%);
+  --color-text-subtle: hsl(220, 20%, 50%);
+
+  /* Borders */
+  --color-border: hsl(220, 30%, 18%);
+  --color-border-hover: hsl(220, 30%, 30%);
+
+  /* Fluid Typography using clamp() */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Outfit', 'Inter', system-ui, sans-serif;
+
+  --text-xs: clamp(0.7rem, 1vw, 0.75rem);
+  --text-sm: clamp(0.8rem, 1.5vw, 0.875rem);
+  --text-base: clamp(0.9rem, 2vw, 1rem);
+  --text-lg: clamp(1rem, 2.5vw, 1.125rem);
+  --text-xl: clamp(1.1rem, 3vw, 1.25rem);
+  --text-2xl: clamp(1.3rem, 4vw, 1.5rem);
+  --text-3xl: clamp(1.6rem, 5vw, 2rem);
+  --text-4xl: clamp(2rem, 6vw, 3rem);
+  --text-5xl: clamp(2.5rem, 8vw, 4.5rem);
+  --text-6xl: clamp(3rem, 10vw, 6rem);
+
+  /* Spacing overrides for base scale (8px system) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-surface-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: var(--space-4);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: var(--text-6xl);
+}
+
+h2 {
+  font-size: var(--text-5xl);
+}
+
+h3 {
+  font-size: var(--text-4xl);
+}
+
+h4 {
+  font-size: var(--text-3xl);
+}
+
+h5 {
+  font-size: var(--text-2xl);
+}
+
+h6 {
+  font-size: var(--text-xl);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--space-4);
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* Base utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--space-8);
+  }
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-text) 0%, var(--color-text-subtle) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-primary {
+  background: linear-gradient(90deg, var(--color-primary-light) 0%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subheadline {
+  font-size: var(--text-xl);
+  color: var(--color-text-muted);
+  max-width: 700px;
+  margin-bottom: var(--space-8);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--color-surface-bg);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--color-surface-raised);
+  border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-hover);
+}
+
+/* --- Global Utility Classes --- */
+
+/* Text Alignment */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Margins */
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mt-2 {
+  margin-top: var(--space-2);
+}
+
+.mt-4 {
+  margin-top: var(--space-4);
+}
+
+.mt-6 {
+  margin-top: var(--space-6);
+}
+
+.mt-8 {
+  margin-top: var(--space-8);
+}
+
+.mt-12 {
+  margin-top: var(--space-12);
+}
+
+.mt-16 {
+  margin-top: var(--space-16);
+}
+
+.mb-2 {
+  margin-bottom: var(--space-2);
+}
+
+.mb-4 {
+  margin-bottom: var(--space-4);
+}
+
+.mb-6 {
+  margin-bottom: var(--space-6);
+}
+
+.mb-8 {
+  margin-bottom: var(--space-8);
+}
+
+.mb-12 {
+  margin-bottom: var(--space-12);
+}
+
+.mb-16 {
+  margin-bottom: var(--space-16);
+}
+
+.ml-2 {
+  margin-left: var(--space-2);
+}
+
+.ml-4 {
+  margin-left: var(--space-4);
+}
+
+.mr-2 {
+  margin-right: var(--space-2);
+}
+
+.mr-4 {
+  margin-right: var(--space-4);
+}
+
+/* Typography Colors */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-primary-light {
+  color: var(--color-primary-light);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-subtle {
+  color: var(--color-text-subtle);
+}
+
+/* Typography Sizes & Weights */
+.text-sm {
+  font-size: var(--text-sm);
+}
+
+.text-base {
+  font-size: var(--text-base);
+}
+
+.text-lg {
+  font-size: var(--text-lg);
+}
+
+.text-xl {
+  font-size: var(--text-xl);
+}
+
+.text-2xl {
+  font-size: var(--text-2xl);
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-bold {
+  font-weight: 700;
+}
